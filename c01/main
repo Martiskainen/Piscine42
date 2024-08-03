@@ -1,0 +1,196 @@
+#include <stdio.h>
+
+int	main()
+{
+	int	a;
+	int	*ptr;
+
+	ptr = &a;
+	ft_ft(ptr);
+
+	printf("%d", a);	
+}
+
+#include <stdio.h>
+
+void	main()
+{
+	int	a;
+	int	*ptr1;
+	int	**ptr2;
+	int	***ptr3;
+	int	****ptr4;
+	int	*****ptr5;
+	int	******ptr6;
+	int	*******ptr7;
+	int	********ptr8;
+	int	*********ptr9;
+
+	ptr1 = &a;
+	ptr2 = &ptr1;
+	ptr3 = &ptr2;
+	ptr4 = &ptr3;
+	ptr5 = &ptr4;
+	ptr6 = &ptr5;
+	ptr7 = &ptr6;
+	ptr8 = &ptr7;
+	ptr9 = &ptr8;
+	ft_ultimate_ft(ptr9);
+	printf("%d", a);
+}
+
+#include <stdio.h>
+
+int	main()
+{
+	int	*ptr1;
+	int	*ptr2;
+	int	a;
+	int	b;
+
+	a = 1;
+	b = 2;
+        printf("%d", a);
+        printf("%d", b);
+
+	ptr1 = &a;
+	ptr2 = &b;
+	ft_swap(ptr1,ptr2);
+	printf("%d", a);
+	printf("%d", b);
+}
+
+#include <stdio.h>
+
+int	main()
+{
+	int	*ptr1;
+	int	*ptr2;
+	int	a;
+	int	b;
+
+	a = 10;
+	b = 8;
+	printf("%d\n", a);
+	printf("%d\n", b);
+	ptr1 = &a;
+	ptr2 = &b;
+	ft_div_mod(a, b, ptr1, ptr2);
+	printf("%d\n", a);
+	printf("%d\n", b);
+}
+
+#include <stdio.h>
+
+int	main()
+{
+	int	*ptr1;
+	int	*ptr2;
+	int	a;
+	int	b;
+
+	a = 10;
+	b = 4;
+	ptr1 = &a;
+	ptr2 = &b;
+	printf("%d\n", a);
+	printf("%d\n", b);
+	ft_ultimate_div_mod(ptr1, ptr2);
+	printf("%d\n", a);
+	printf("%d\n", b);
+
+}
+
+
+int	main(void)
+{
+	ft_putcstr("asd");
+}
+
+
+
+
+ex07
+
+
+
+
+
+void	ft_rev_int_tab(int *tab, int size)
+{
+	int	i;
+	int	temp;
+
+	i = 0;
+	while (i < size / 2)
+	{
+		temp = tab[i];
+		tab[i] = tab[size - i - 1];
+		tab[size - i - 1] = temp;
+		i++;
+	}
+}
+
+#include <stdio.h>
+
+int	main()
+{
+	int a[] = {1, 9, 5, 3, -1};
+	int i = 0;
+	
+	ft_rev_int_tab(a, 5);
+	while (i < 5)
+	{
+		printf("%d", a[i]);
+		i++;
+	}
+	return 0;
+}
+
+
+
+
+ex08
+
+
+
+
+void	ft_rev_int_tab(int *tab, int size)
+{
+	int	i;
+	int	j;
+	int	temp;
+
+	i = 0;
+	while (i < size)
+	{
+		j = 0;
+		while (j < size - 1)
+		{
+			if (tab[j] - tab[j + 1] > 0)
+			{
+				temp = tab[j];
+				tab[j] = tab[j + 1];
+				tab[j + 1] = temp;
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
+#include <stdio.h>
+
+int	main()
+{
+	int a[] = {1, 9, 3, -1};
+	int i = 0;
+	
+	ft_sort_int_tab(a, 4);
+	while (a[i] != '\0')
+	{
+		printf("%d", a[i]);
+		i++;
+	}
+	return 0;
+}

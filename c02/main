@@ -1,0 +1,259 @@
+
+#include <stdio.h>
+#include <string.h>
+
+int	main(void)
+{
+	char	src[] = "123";
+	char	dest[] = "777777";
+	char	src2[] = "abc";
+	char	dest2[] = "12345";
+
+	printf("src1: %s\n", src);
+	printf("dest: %s\n\n", dest);
+	printf("src2: %s\n", src2);
+	printf("dest2: %s\n\n", dest2);
+	printf("function copy1: %s\n", ft_strcpy(dest, src));
+	printf("library function copy1: %s\n", strcpy(dest, src));
+	printf("function copy2: %s\n", ft_strcpy(dest2, src2));
+	printf("library function copy2: %s", strcpy(dest2, src2));
+}
+
+
+#include <stdio.h>
+#include <string.h>
+
+int     main(void)
+{
+        char    src[] = "123";
+        char    dest[] = "777777";
+        char    src2[] = "a";
+        char    dest2[] = "12345678";
+        char    src3[] = "123";
+        char    dest3[] = "777777";
+        char    src4[] = "a";
+        char    dest4[] = "12345678";
+
+        printf("src1: %s\n", src);
+        printf("dest: %s\n\n", dest);
+        printf("src2: %s\n", src2);
+        printf("dest2: %s\n\n", dest2);
+        printf("function copy1: %s\n", ft_strncpy(dest, src, 2));
+        printf("library function copy1: %s\n", strncpy(dest3, src3, 2));
+        printf("function copy2: %s\n", ft_strncpy(dest2, src2, 4));
+        printf("library function copy2: %s", strncpy(dest4, src4, 4));
+}
+
+
+#include <unistd.h>
+#include <string.h>
+
+int     main(void)
+{
+        char    ptr1[] = "abc";
+        char    ptr2[] = "abc123#";
+        char    ptr3[] = "";
+        int     a;
+        int     b;
+        int     c;
+
+        a = ft_str_is_alpha(ptr1) + '0';
+        b = ft_str_is_alpha(ptr2) + 48;
+        c = ft_str_is_alpha(ptr3) + 48;
+        write(1, &a, 1);
+        write(1, "\n", 1);
+        write(1, &b, 1);
+        write(1, "\n", 1);
+        write(1, &c, 1);
+}
+
+
+#include <unistd.h>
+#include <string.h>
+
+int     main(void)
+{
+        char    ptr1[] = "09";
+        char    ptr2[] = "abc123#";
+        char    ptr3[] = "";
+        int     a;
+        int     b;
+        int     c;
+
+        a = ft_str_is_numeric(ptr1) + '0';
+        b = ft_str_is_numeric(ptr2) + 48;
+        c = ft_str_is_numeric(ptr3) + 48;
+        write(1, &a, 1);
+        write(1, "\n", 1);
+        write(1, &b, 1);
+        write(1, "\n", 1);
+        write(1, &c, 1);
+}
+
+
+#include <unistd.h>
+#include <string.h>
+
+int     main(void)
+{
+        char    ptr1[] = "abc";
+        char    ptr2[] = "abC";
+        char    ptr3[] = "";
+        int     a;
+        int     b;
+        int     c;
+
+        a = ft_str_is_lowercase(ptr1) + '0';
+        b = ft_str_is_lowercase(ptr2) + 48;
+        c = ft_str_is_lowercase(ptr3) + 48;
+        write(1, &a, 1);
+        write(1, "\n", 1);
+        write(1, &b, 1);
+        write(1, "\n", 1);
+        write(1, &c, 1);
+}
+
+
+#include <unistd.h>
+#include <string.h>
+
+int     main(void)
+{
+        char    ptr1[] = "aBc";
+        char    ptr2[] = "ABC";
+        char    ptr3[] = "";
+        int     a;
+        int     b;
+        int     c;
+
+        a = ft_str_is_uppercase(ptr1) + '0';
+        b = ft_str_is_uppercase(ptr2) + 48;
+        c = ft_str_is_uppercase(ptr3) + 48;
+        write(1, &a, 1);
+        write(1, "\n", 1);
+        write(1, &b, 1);
+        write(1, "\n", 1);
+        write(1, &c, 1);
+}
+
+
+#include <stdio.h>
+
+int     main()
+{
+        int     wtf;
+        char    a[] = "\n";
+
+        wtf = ft_str_is_printable(a);
+        printf("%d\n", wtf);
+
+        int     wtf2;
+        char    b[] = "asd";
+
+        wtf2 = ft_str_is_printable(b);
+        printf("%d\n", wtf2);
+}
+
+
+#include <stdio.h>
+
+int main() 
+
+{
+	char a[] = "asD1";
+	printf("%s", ft_strupcase(a));
+
+	return 0;
+}
+
+
+#include <stdio.h>
+
+int     main(void)
+{
+    char a[] = "ASs1Z";
+    printf("%s", ft_strlowcase(a));
+}
+
+
+#include <stdio.h>
+
+int main()
+{
+    char c[] = "caa dDDDa +asdSSd +==asd=-";
+    printf("%s", ft_strcapitalize(c));
+
+    return 0;
+}
+          
+
+
+#include <stdio.h>
+#include <string.h>
+
+int     main(void)
+{
+    char a[] = "aSde";
+    char b[] = "123456";
+    unsigned int n = 4;
+    unsigned int res = ft_strlcpy(a, b, n);
+    
+    printf("%d", res);
+}
+
+
+
+
+ex11
+
+
+
+
+void	ft_putchar(unsigned char str)
+{
+	unsigned char	a;
+	unsigned char	b;
+
+	if (str < 32 || str > 126)
+	{
+		if (str < 10)
+		{
+			write(1, "\\", 1);
+			a = str / 16 + 48;
+			write(1, &a, 1);
+			b = str % 16 + 48;
+			write(1, &b, 1);
+		}
+		else
+		{
+			write(1, "\\", 1);
+			a = str / 16 + 48;
+			write(1, &a, 1);
+			b = str % 16 + 55 + 32;
+			write(1, &b, 1);
+		}
+	}
+	else
+		write(1, &str, 1);
+}
+
+void	ft_putstr_non_printable(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+}
+
+int	main(void)
+{
+	char	a[3] = "Coucou\ntu vas bien ?";
+	//char a[3];
+	//a[0] = 29;
+	ft_putstr_non_printable(a);
+	return (0);
+}

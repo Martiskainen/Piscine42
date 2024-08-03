@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("%d", ft_strlen("asd"));
+}
+
+
+int	main(void)
+{
+	ft_putstr("asd");
+}
+
+
+int	main(void)
+{
+	ft_putnbr(123456);
+}
+
+int     main(void)
+{
+        ft_putnbr(-2147483648);
+}
+
+#include <stdio.h>
+
+int main()
+{
+    char str[] = " ---+--+1234ab567";
+
+    printf("%d", ft_atoi(str));
+}

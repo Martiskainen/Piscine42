@@ -1,0 +1,189 @@
+
+
+#include <string.h>
+#include <stdio.h>
+
+int     main(void)
+{
+	char	word1[] = "abc";
+	char	word2[] = "def";
+	char	word11[] = "abc";
+	char	word22[] = "def";
+	int	smallerasciineg1;
+	int	smallerasciineg11;
+
+	smallerasciineg1 = ft_strcmp(word1, word2);
+	printf("%s\n", word1);
+	printf("%s\n", word2);
+	printf("my function: %d\n", smallerasciineg1);
+
+	smallerasciineg11 = strcmp(word11, word22);
+	printf("%s\n", word11);
+	printf("%s\n", word22);
+	printf("strcmp: %d\n", smallerasciineg11);
+
+	char	word7[] = "asd";
+	char	word8[] = "asdsh";
+	char	word77[] = "asd";
+	char	word88[] = "asdsh";
+	int	smallerasciineg2;
+	int	smallerasciineg22;
+
+	smallerasciineg2 = ft_strcmp(word7, word8);
+	printf("%s\n", word7);
+	printf("%s\n", word8);
+	printf("my function: %d\n", smallerasciineg2);
+
+	smallerasciineg22 = strcmp(word77, word88);
+	printf("%s\n", word77);
+	printf("%s\n", word88);
+	printf("strcmp: %d\n", smallerasciineg22);
+
+	char	word3[] = "asd";
+	char	word4[] = "asd";
+	char	word33[] = "asd";
+	char	word44[] = "asd";
+	int	same;
+	int	same2;
+
+	same = ft_strcmp(word3, word4);
+	printf("%s\n", word3);
+	printf("%s\n", word4);
+	printf("my function: %d\n", same);
+
+	same2 = strcmp(word33, word44);
+	printf("%s\n", word33);
+	printf("%s\n", word44);
+	printf("strcmp: %d\n", same2);
+	
+	char	word5[] = "def";
+	char	word6[] = "abc";
+	char	word55[] = "def";
+	char	word66[] = "abc";
+	int	biggerasciipos;
+	int	biggerasciipos2;
+
+	biggerasciipos = ft_strcmp(word5, word6);
+	printf("%s\n", word5);
+	printf("%s\n", word6);
+	printf("my function: %d\n", biggerasciipos);
+
+	biggerasciipos2 = strcmp(word55, word66);
+	printf("%s\n", word55);
+	printf("%s\n", word66);
+	printf("strcmp: %d\n", biggerasciipos2);
+}
+
+
+#include <string.h>
+#include <stdio.h>
+
+int     main(void)
+{
+        char    word1[] = "abc";
+        char    word2[] = "abddd";
+        int     res;
+
+        res = ft_strncmp(word1, word2, 5);
+        printf("%s\n", word1);
+        printf("%s\n", word2);
+        printf("my function: %d\n", res);
+        res = strncmp(word1, word2, 5);
+        printf("%s\n", word1);
+        printf("%s\n", word2);
+        printf("strncmp: %d\n", res);
+}
+
+
+#include <stdio.h>
+
+int     main(void)
+{
+        char source[30] = "added source";
+        char destination[30] = "beginning of string | ";
+
+        ft_strcat(destination, source);
+        printf("%s\n", destination);
+        return (0);
+}
+
+
+#include <stdio.h>
+#include <string.h>
+
+int     main(void)
+{
+        char    source[30] = "added source";
+        char    destination[30] = "beginning of string | ";
+        char    source2[30] = "added source";
+        char    destination2[30] = "beginning of string | ";
+
+        ft_strcat(destination, source);
+        printf("my function: %s\n", destination);
+        strcat(destination2, source2);
+        printf("strcat: %s\n", destination2);
+        return (0);
+}
+ 
+
+#include <string.h>
+#include <stdio.h>
+
+int main() {
+    char *s1 = "d";
+    char *s2 = "";
+    
+    printf("M:%s \n", ft_strstr(s1, s2));
+    printf("A:%s", strstr(s1, s2));
+
+    return 0;
+}
+
+
+
+
+ex05
+
+
+
+
+unsigned int    ft_strlcat(char *dest, char *src, unsigned int size)
+{
+        unsigned int    i;
+        unsigned int    j;
+
+        i = 0;
+        j = 0;
+        while (dest[i] != '\0' && i < size)
+                i++;
+        while (src[j] != '\0' && i + 1 < size)
+        {
+                dest[j] = src[j];
+                i++;
+                j++;
+        }
+        if (i < size)
+                dest[i] = '\0';
+        while (src[j] != '\0')
+        {
+                j++;
+                i++;
+        }
+        return (i);
+}
+
+#include <stdio.h>
+#include <string.h>
+
+int     main(void)
+{
+        char            a[] = "aSde";
+        char            b[] = "123456";
+        unsigned int    n = 2;
+        unsigned int    res = ft_strlcat(a, b, n);
+
+        printf("%d\n", res);
+}
+
+
+

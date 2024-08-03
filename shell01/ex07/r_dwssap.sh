@@ -1,0 +1,1 @@
+cat /etc/passwd | awk 'NR % 2==0' | awk 'FNR>= ENVIRON["FT_LINE1"] && FNR<= ENVIRON["FT_LINE2"]' | sed -e 's/#.*//' -e 's/:.*//g' | rev | sort -r | tr "\n" "," | sed -e 's/, */, /g' -e 's/.$//' -e 's/.$/./'

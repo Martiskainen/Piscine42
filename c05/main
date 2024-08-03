@@ -1,0 +1,34 @@
+
+
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("%d", ft_iterative_factorial(9));
+}
+
+
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("%d", ft_recursive_factorial(9));
+}
+
+
+
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("%d", ft_iterative_power(3, 3));
+}
+
+
+
+#include <stdio.h>
+
+int	main(void)
+{
+	printf("%d", ft_recursive_power(3, 3));
+}
